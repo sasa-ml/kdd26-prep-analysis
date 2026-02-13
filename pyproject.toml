@@ -1,0 +1,50 @@
+[project]
+name = "prep-analysis"
+version = "0.1.0"
+authors = [
+  { name = "sasa-ml", email = "23556522+sasa-ml@users.noreply.github.com" },
+]
+description = "(Automated) data preparation for ML"
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
+
+requires-python = ">=3.12,<3.13"
+
+dependencies = [
+    "numba>=0.63.1,<2", # for auto-prepper version resolution
+    "openml>=0.15.1,<1",
+    "autogluon==1.5.0",
+    "autogluon-tabular[all]==1.5.0",
+    "autogluon-tabular[tabm,tabpfn]==1.5.0",
+    "tabarena[benchmark] @ git+https://github.com/autogluon/tabarena.git#subdirectory=tabarena",
+    "plotly>=6.0.1,<7",
+    "kaleido==0.2.1", # for tabarena compatibility
+    "husl>=4.0.3,<5",
+    "polars>=0.20.2,<1",
+    "numpy>=2.0,<3",
+    "umap-learn>=0.5.5,<1",
+    "scipy>=1.12.0,<2",
+    "pillow>=10.2.0,<11",
+    "imbalanced-learn>=0.14.0,<1",
+    "scikit-learn>=1.5.2,<2",
+    "pandas>=2.2.3,<3",
+    "pyarrow>=20.0.0,<21",
+]
+
+[dependency-groups]
+dev = [
+    "black>=24.10.0,<25",
+    "isort>=5.13.2,<6",
+]
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.setuptools]
+packages = ["auto_prepper", "prep_analysis"]
