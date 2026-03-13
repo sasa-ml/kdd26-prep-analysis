@@ -215,7 +215,7 @@ std.out
 
 # keepers
 !output/original/
+output/original/*
 !output/original/results_cpu_original.txt
 !output/original/results_catboost_original.txt
 !output/original/results_gpu_original.txt
-!output/original/*
